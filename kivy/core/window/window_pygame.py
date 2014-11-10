@@ -260,8 +260,6 @@ class WindowPygame(WindowBase):
                                               GL_UNSIGNED_BYTE)
         width, height = self.system_size
         data = glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE)
-        print(type(data))
-
         surface = pygame.image.fromstring(data, (width, height), 'RGBA', True)
         pygame.image.save(surface, filename)
         Logger.debug('Window: Screenshot saved at <%s>' % filename)
